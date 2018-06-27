@@ -41,7 +41,7 @@ Game.prototype.checkIfCollision (){
 }
 
 if (PlayerClickRight> IsotopeLeft && IsotopeLeft>PlayerClickLeft){
-  
+
 
 
 
