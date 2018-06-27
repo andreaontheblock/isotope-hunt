@@ -9,16 +9,19 @@ function Game (ctx,canvasWidth,canvasHeight){
   this.hitBoxes = [];
   // this.reestart
   this.isotope = null;
+  this.isEnded = false;
+  this.cb = null;
 }
 
-Game.prototype.start = function() {
+Game.prototype.start = function(cb) {
+  this.cb = cb;
   this.isotope = new Isotope(this.ctx,this.canvasSize);
   this.doFrame();
 }
 Game.prototype.drawHitBoxes = function() {
   var self = this;
   this.hitBoxes.forEach(function(hitBox){
-    self.ctx.fillRect(hitBox.cornerX, hitBox.cornerY, 20, 20);
+    self.ctx.fillRect(hitBox.cornerX, hitBox.cornerY, 40, 40);
   })
 
 }
@@ -36,41 +39,22 @@ Game.prototype.checkIfCollision = function(newHit){
   var isotopeBottom = this.isotope.position.y + this.isotope.size.height;
 
   var hitBoxLeft = newHit.cornerX;
-  var hitBoxRight = newHit.cornerX + 20;
+  var hitBoxRight = newHit.cornerX + 40;
   var hitBoxTop = newHit.cornerY;
-  var hitBoxBottom = newHit.cornerY + 20;
+  var hitBoxBottom = newHit.cornerY + 40;
   
-
-
-  
-
-  // if (
-  //   isotopeRight<hitBoxRight && 
-  //   isotopeBottom > hitBoxTop && 
-  //   isotopeBottom<hitBoxTop && 
-  //   isotopeRight> hitBoxLeft){
-  //   console.log ("collision")
-  // }
 
   if ((hitBoxBottom > isotopeTop && hitBoxBottom < isotopeBottom || hitBoxTop > isotopeTop && hitBoxTop < isotopeBottom) &&
       (hitBoxLeft > isotopeLeft && hitBoxLeft < isotopeRight || hitBoxRight > isotopeLeft && hitBoxRight < isotopeRight))
   {
     console.log ("collision")
+    this.cb();
   }
- 
 }
-
-
-
-
-
-
-
 
 Game.prototype.doFrame = function () {
   var self = this;
 
-  // self.checkIfCollision();
   self.draw();
 
   window.requestAnimationFrame(function() {

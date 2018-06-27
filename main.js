@@ -40,7 +40,7 @@ function main (){
     var ctx = canvas.getContext('2d');
     game = new Game(ctx,canvasWidth,canvasHeight);
     canvas.addEventListener('click', handleMouseClick)
-    game.start()
+    game.start(destroyGame)
     // var test = setTimeout(function(){
     //   destroyGame();
     // }, 3000)
@@ -65,7 +65,6 @@ function main (){
   function destroyGame(){
     cont.remove();
     buildRestart()
-
   }
 
 

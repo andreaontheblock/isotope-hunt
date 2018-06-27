@@ -8,16 +8,9 @@ function Isotope(ctx,canvasSize){
   this.ctx = ctx;
   this.canvasSize = canvasSize;
   this.position = {
-    x: Math.floor(Math.random() * (this.canvasSize.width - this.size.width) + this.size.width),
-    y: Math.floor(Math.random() * (this.canvasSize.height-this.size.height) + this.size.height)
-
-    // Math.random() * (max - min) + min
-  
-
-    // Math.random() * this.canvasSize.width-this.size.width),
-    // Math.random() * this.canvasSize.height+this.size.height)
+    x: Math.floor(Math.random() * (this.canvasSize.width - this.size.width)),
+    y: Math.floor(Math.random() * (this.canvasSize.height-this.size.height))
   };
-  // //this.visible = ;
 }
 
 Isotope.prototype.draw = function() {
