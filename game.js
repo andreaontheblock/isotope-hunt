@@ -27,10 +27,30 @@ Game.prototype.draw = function() {
   this.isotope.draw();
   this.drawHitBoxes();
 }
+Game.prototype.checkIfCollision (){
+  var isotopeLeft = this.isotope.position.x,
+  var isotopeRight = this.isotope.position.x + this.size.width,
+  var isotopeTop = this.isotope.position.y,
+  var isotopeBottom = this.isotope.position.y + this.size.height,
+
+
+  var playerClickLeft = this.
+  var playerClickRight =this.
+  var playerClickTop =this.
+  var playerClickBottom = this.
+}
+
+if (PlayerClickRight> IsotopeLeft && IsotopeLeft>PlayerClickLeft){
+  
+
+
+
+
 
 Game.prototype.doFrame = function () {
   var self = this;
 
+  // self.checkIfCollision();
   self.draw();
   window.requestAnimationFrame(function() {
     self.doFrame();

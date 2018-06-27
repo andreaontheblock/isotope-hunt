@@ -67,18 +67,6 @@ function main (){
 
   }
 
-  function  checkColision(){
-    let IsotopeLeft = this.isotope.position.x,
-    let IsotopeRight = this.isotope.position.x + this.size.width,
-    let IsotopeTop = this.isotope.position.y,
-    let IsotopeBottom = this.isotope.position.y + this.size.height,
-
-
-    let PlayerClickLeft = this.
-    let PlayerClickRight =
-    let PlayerClickTop =
-    let PlayerClickBottom =
-  }
 
   function buildRestart(){
     cont = document.createElement('div');
