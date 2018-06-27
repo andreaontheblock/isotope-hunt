@@ -47,13 +47,17 @@ function main (){
   }
 
   function handleMouseClick(event) {
-    var newHit = {
-      centerX: event.screenX,
-      centerY: event.screenY,
-      cornerX: event.screenX-5,
-      cornerY: event.screenY+5
-    }
+    var x = event.clientX - 50;
+    var y = event.clientY
 
+    var newHit = {
+      centerX: x,
+      centerY: y,
+      cornerX: x - 10,
+      cornerY: y - 10
+    }
+    console.log("Position X Mouse = " + newHit.centerX);
+    console.log("Position Y Mouse = " + newHit.centerY);
     game.hitBoxes.push(newHit);
   }
 
@@ -61,6 +65,19 @@ function main (){
     cont.remove();
     buildRestart()
 
+  }
+
+  function  checkColision(){
+    let IsotopeLeft = this.isotope.position.x,
+    let IsotopeRight = this.isotope.position.x + this.size.width,
+    let IsotopeTop = this.isotope.position.y,
+    let IsotopeBottom = this.isotope.position.y + this.size.height,
+
+
+    let PlayerClickLeft = this.
+    let PlayerClickRight =
+    let PlayerClickTop =
+    let PlayerClickBottom =
   }
 
   function buildRestart(){

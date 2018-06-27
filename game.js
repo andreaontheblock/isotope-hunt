@@ -15,8 +15,12 @@ Game.prototype.start = function() {
   this.isotope = new Isotope(this.ctx,this.canvasSize);
   this.doFrame();
 }
-Game.prototype.drawHitBoxes= function() {
-  
+Game.prototype.drawHitBoxes = function() {
+  var self = this;
+  this.hitBoxes.forEach(function(hitBox){
+    self.ctx.fillRect(hitBox.cornerX, hitBox.cornerY, 20, 20);
+  })
+
 }
 
 Game.prototype.draw = function() {
