@@ -27,20 +27,40 @@ Game.prototype.draw = function() {
   this.isotope.draw();
   this.drawHitBoxes();
 }
-Game.prototype.checkIfCollision (){
-  var isotopeLeft = this.isotope.position.x,
-  var isotopeRight = this.isotope.position.x + this.size.width,
-  var isotopeTop = this.isotope.position.y,
-  var isotopeBottom = this.isotope.position.y + this.size.height,
+
+Game.prototype.checkIfCollision = function(newHit){
+  var isotopeLeft = this.isotope.position.x;
+  var isotopeTop = this.isotope.position.y;
+  var isotopeRight = this.isotope.position.x + this.isotope.size.width;
+
+  var isotopeBottom = this.isotope.position.y + this.isotope.size.height;
+
+  var hitBoxLeft = newHit.cornerX;
+  var hitBoxRight = newHit.cornerX + 20;
+  var hitBoxTop = newHit.cornerY;
+  var hitBoxBottom = newHit.cornerY + 20;
+  
 
 
-  var playerClickLeft = this.
-  var playerClickRight =this.
-  var playerClickTop =this.
-  var playerClickBottom = this.
+  
+
+  // if (
+  //   isotopeRight<hitBoxRight && 
+  //   isotopeBottom > hitBoxTop && 
+  //   isotopeBottom<hitBoxTop && 
+  //   isotopeRight> hitBoxLeft){
+  //   console.log ("collision")
+  // }
+
+  if ((hitBoxBottom > isotopeTop && hitBoxBottom < isotopeBottom || hitBoxTop > isotopeTop && hitBoxTop < isotopeBottom) &&
+      (hitBoxLeft > isotopeLeft && hitBoxLeft < isotopeRight || hitBoxRight > isotopeLeft && hitBoxRight < isotopeRight))
+  {
+    console.log ("collision")
+  }
+ 
 }
 
-if (PlayerClickRight> IsotopeLeft && IsotopeLeft>PlayerClickLeft){
+
 
 
 
@@ -52,6 +72,7 @@ Game.prototype.doFrame = function () {
 
   // self.checkIfCollision();
   self.draw();
+
   window.requestAnimationFrame(function() {
     self.doFrame();
   });

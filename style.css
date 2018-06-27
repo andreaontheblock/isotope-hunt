@@ -12,10 +12,24 @@ body {
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
+/* body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
 #main-container {
+  height: 80%;
+  background-image: url("http://static.t13.cl/images/sizes/1200x675/1525972844-rick-morty.jpg");
+  background-repeat: no-repeat;
+  background-size:  contain;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 90px;
-  color:green;
+  color: #37d129;
   text-shadow: 2px 2px blue;
   display: flex;
   flex-direction: column;
@@ -23,8 +37,10 @@ body {
   justify-content: space-around;
 
 }
+
 #btn-start {
-  
+  height: 50px;
+  width: 100px;
 }
 
 #canvas {

@@ -56,9 +56,10 @@ function main (){
       cornerX: x - 10,
       cornerY: y - 10
     }
-    console.log("Position X Mouse = " + newHit.centerX);
-    console.log("Position Y Mouse = " + newHit.centerY);
+    // console.log("Position X Mouse = " + newHit.centerX);
+    // console.log("Position Y Mouse = " + newHit.centerY);
     game.hitBoxes.push(newHit);
+    game.checkIfCollision(newHit);
   }
 
   function destroyGame(){
