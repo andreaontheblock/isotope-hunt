@@ -4,8 +4,8 @@ function main (){
   var cont = null;
   var canvas = null;
   var game = null;
-  var canvasWidth = 500;
-  var canvasHeight = 300;
+  var canvasWidth = 1000;
+  var canvasHeight = 600;
 
 
   function buildSplash (){
@@ -47,8 +47,8 @@ function main (){
   }
 
   function handleMouseClick(event) {
-    var x = event.clientX - 50;
-    var y = event.clientY -20;
+    var x = event.clientX - 300;
+    var y = event.clientY -80;
 
     var newHit = {
       centerX: x,

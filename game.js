@@ -32,7 +32,7 @@ Game.prototype.start = function() {
 Game.prototype.drawHitBoxes = function() {
   var self = this;
   this.hitBoxes.forEach(function(hitBox){
-    self.ctx.drawImage(self.mortyImage ,hitBox.cornerX, hitBox.cornerY, 40, 40);
+    self.ctx.drawImage(self.mortyImage ,hitBox.cornerX, hitBox.cornerY, 90, 90);
   })
 
 }
