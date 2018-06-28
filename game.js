@@ -13,6 +13,16 @@ function Game (ctx, cb, canvasWidth,canvasHeight){
 
   this.endTempisActive = false
   this.endTemp = 0
+  this.mortyImage = new Image();
+  this.mortyImage.src = "./images/scared-morty.png";
+
+  this.myMan = new Audio();
+  this.myMan.src = './sounds/myman.mp3'
+
+  this.humanMusic = new Audio();
+  this.humanMusic.src = './sounds/myman.mp3'
+
+
 }
 
 Game.prototype.start = function() {
@@ -22,7 +32,7 @@ Game.prototype.start = function() {
 Game.prototype.drawHitBoxes = function() {
   var self = this;
   this.hitBoxes.forEach(function(hitBox){
-    self.ctx.fillRect(hitBox.cornerX, hitBox.cornerY, 40, 40);
+    self.ctx.drawImage(self.mortyImage ,hitBox.cornerX, hitBox.cornerY, 40, 40);
   })
 
 }
@@ -59,6 +69,7 @@ Game.prototype.checkIfCollision = function(newHit){
     console.log ("collision")
     this.isotope.isActive = true
     this.endTempisActive = true;
+    this.myMan.play();
   }
 }
 

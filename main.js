@@ -48,7 +48,7 @@ function main (){
 
   function handleMouseClick(event) {
     var x = event.clientX - 50;
-    var y = event.clientY
+    var y = event.clientY -20;
 
     var newHit = {
       centerX: x,
@@ -75,9 +75,10 @@ function main (){
     document.body.appendChild(cont);
     cont.innerHTML= `<h1>RESTART</h1>
     <button id='btn-restart'>CLICK HERE</button>`
+    //  <img src="./images/my-man.gif">
     var btn = document.getElementById('btn-restart');
     btn.addEventListener ('click', destroySplash);
-   
+    
   }
 
    buildSplash()
