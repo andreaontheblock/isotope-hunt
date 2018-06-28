@@ -1,6 +1,6 @@
 'use strict'
 
-function Game (ctx,canvasWidth,canvasHeight){
+function Game (ctx, cb, canvasWidth,canvasHeight){
   this.ctx = ctx;
   this.canvasSize = {
     width: canvasWidth,
@@ -9,12 +9,13 @@ function Game (ctx,canvasWidth,canvasHeight){
   this.hitBoxes = [];
   // this.reestart
   this.isotope = null;
-  this.isEnded = false;
-  this.cb = null;
+  this.callback = cb;
+
+  this.endTempisActive = false
+  this.endTemp = 0
 }
 
-Game.prototype.start = function(cb) {
-  this.cb = cb;
+Game.prototype.start = function() {
   this.isotope = new Isotope(this.ctx,this.canvasSize);
   this.doFrame();
 }
@@ -27,8 +28,16 @@ Game.prototype.drawHitBoxes = function() {
 }
 
 Game.prototype.draw = function() {
-  this.isotope.draw();
+  if(this.isotope.isActive === true){
+    this.isotope.draw();
+  }
   this.drawHitBoxes();
+}
+Game.prototype.checkIfEnded = function(){
+  console.log(this.endTemp)
+  if(this.endTemp > 100){
+    this.callback();
+  }
 }
 
 Game.prototype.checkIfCollision = function(newHit){
@@ -48,17 +57,25 @@ Game.prototype.checkIfCollision = function(newHit){
       (hitBoxLeft > isotopeLeft && hitBoxLeft < isotopeRight || hitBoxRight > isotopeLeft && hitBoxRight < isotopeRight))
   {
     console.log ("collision")
-    setTimeout()
-    this.cb();
+    this.isotope.isActive = true
+    this.endTempisActive = true;
   }
 }
 
 Game.prototype.doFrame = function () {
   var self = this;
+  
+  if(self.endTempisActive === true){
+    self.endTemp ++;
+    // console.log(self.endTemp);
+  }
+  self.checkIfEnded();
 
   self.draw();
 
   window.requestAnimationFrame(function() {
-    self.doFrame();
+    if(self.endTemp <= 100){
+      self.doFrame();
+    }
   });
 }

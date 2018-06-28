@@ -24,7 +24,7 @@ html, body {
 
 #main-container {
   height: 80%;
-  background-image: url("http://static.t13.cl/images/sizes/1200x675/1525972844-rick-morty.jpg");
+  background-image: url("http://0.media.dorkly.cvcdn.com/59/97/9878d8d71b1c56bf9b7c8631ed6c4cd8.gif");
   background-repeat: no-repeat;
   background-size:  cover;
   font-family: Arial, Helvetica, sans-serif;
@@ -46,7 +46,7 @@ html, body {
 #canvas {
   /* width: 500px;
   height:300px; */
-  border: 4px solid pink;
+  border: 4px solid black;
   margin-left: 50px;
 }
 
