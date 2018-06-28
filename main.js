@@ -73,8 +73,8 @@ function main (){
     cont = document.createElement('div');
     cont.setAttribute('id','restart-container');
     document.body.appendChild(cont);
-    cont.innerHTML= `<h1>RESTART</h1>
-    <button id='btn-restart'>CLICK HERE</button>`
+    cont.innerHTML= `<h1>PLAY AGAIN!</h1>
+    <button id='btn-restart'>RESTART</button>`
     //  <img src="./images/my-man.gif">
     var btn = document.getElementById('btn-restart');
     btn.addEventListener ('click', destroySplash);

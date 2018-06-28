@@ -39,8 +39,19 @@ html, body {
 }
 
 #btn-start {
-  height: 50px;
+  /* height: 50px;
   width: 100px;
+   */
+  background:rgb(10, 161, 22);
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size: 20px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
 }
 
 #canvas {
@@ -54,12 +65,17 @@ html, body {
 #restart-container {
   background-image: url('images/my-man.gif');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   height: 100%;
+  width: 100%;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 90px;
   color: #37d129;
   text-shadow: 3px 9px blue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 #restart-container h1 {
@@ -68,10 +84,26 @@ html, body {
 
 
 #btn-restart {
-  height: 50px;
+  /* height: 50px;
   width: 180px;
-  margin-left: 120px;
+  margin-left: 120px; */
+
+  background:rgb(10, 161, 22);
+  color:#fff;
+  border:none;
+  position:relative;
+  height:60px;
+  font-size: 20px;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+
+
+
+
 }
+
 #game-container {
  height: 100%;
  background-image: url("https://media.giphy.com/media/AbgiE2SQjLHLW/giphy.gif");
