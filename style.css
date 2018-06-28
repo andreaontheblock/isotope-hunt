@@ -26,11 +26,11 @@ html, body {
   height: 80%;
   background-image: url("http://static.t13.cl/images/sizes/1200x675/1525972844-rick-morty.jpg");
   background-repeat: no-repeat;
-  background-size:  contain;
+  background-size:  cover;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 90px;
   color: #37d129;
-  text-shadow: 2px 2px blue;
+  text-shadow: 3px 9px blue;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -50,6 +50,21 @@ html, body {
   margin-left: 50px;
 }
 
+#restart-container {
+  background-image: url('https://www.reactiongifs.us/wp-content/uploads/2016/02/cant_look_away_rick_morty.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 90px;
+  color: #37d129;
+  text-shadow: 3px 9px blue;
+}
+#btn-restart {
+  height: 50px;
+  width: 180px;
+  margin-left: 120px;
+}
 /* 
 @font-face{
   font-family: myFirstFont;

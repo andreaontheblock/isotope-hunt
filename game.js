@@ -48,6 +48,7 @@ Game.prototype.checkIfCollision = function(newHit){
       (hitBoxLeft > isotopeLeft && hitBoxLeft < isotopeRight || hitBoxRight > isotopeLeft && hitBoxRight < isotopeRight))
   {
     console.log ("collision")
+    setTimeout()
     this.cb();
   }
 }

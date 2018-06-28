@@ -2,8 +2,8 @@
 
 function Isotope(ctx,canvasSize){
   this.size = {
-    width: 20,
-    height: 20
+    width: 40,
+    height: 40,
   };
   this.ctx = ctx;
   this.canvasSize = canvasSize;
@@ -14,5 +14,5 @@ function Isotope(ctx,canvasSize){
 }
 
 Isotope.prototype.draw = function() {
-  this.ctx.fillRect(this.position.x,this.position.y, 20,20);
+  this.ctx.fillRect(this.position.x,this.position.y, 40,40);
 }
