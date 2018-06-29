@@ -19,9 +19,8 @@ function Game (ctx, cb, canvasWidth,canvasHeight){
   this.myMan = new Audio();
   this.myMan.src = './sounds/myman.mp3'
 
-  this.humanMusic = new Audio();
-  this.humanMusic.src = './sounds/myman.mp3'
-
+  this.music = new Audio();
+  this.music.src = './sounds/human-music.mp3';
 
 }
 
@@ -44,7 +43,6 @@ Game.prototype.draw = function() {
   this.drawHitBoxes();
 }
 Game.prototype.checkIfEnded = function(){
-  console.log(this.endTemp)
   if(this.endTemp > 100){
     this.callback();
   }
@@ -69,13 +67,14 @@ Game.prototype.checkIfCollision = function(newHit){
     console.log ("collision")
     this.isotope.isActive = true
     this.endTempisActive = true;
+    this.music.src = '';
     this.myMan.play();
   }
 }
 
 Game.prototype.doFrame = function () {
   var self = this;
-  
+  this.music.play();
   if(self.endTempisActive === true){
     self.endTemp ++;
     // console.log(self.endTemp);
